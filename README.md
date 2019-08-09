@@ -70,10 +70,14 @@ python3 manage.py runserver
 ![Alt text](/../master/examples/task_details.png?raw=true "Task Details")
 ##### Create Task
 ![Alt text](/../master/examples/createtask.png?raw=true "Create Task")
+##### Edit Task
+![Alt text](/../master/examples/edit_task.png?raw=true "Edit Task")
 ##### Search Results
 ![Alt text](/../master/examples/search_results.png?raw=true "Search Results")
 ##### Task Activity
 ![Alt text](/../master/examples/task_activity.png?raw=true "Task Activity")
+##### Password Reset Email
+![Alt text](/../master/examples/password_reset_email.png?raw=true "Password Reset Email")
 
 ### Project Files
 1. views.py - controls what happens when a user visits a URL route (acts like app.py, or application.py, in a FLASK application)
