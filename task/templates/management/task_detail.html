@@ -68,13 +68,13 @@
         </div>
       </div>
       <div class="form-group row">
-          {% if user == task.user or user.is_superuser %}
-          <div class="col-sm-2">
-            <a href="{% url 'task:edittask' task.pk %}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'task:deletetask' task.pk %}" class="btn btn-danger"
-               onclick="return confirm('Are you sure you want to Delete?');">Delete</a>
-          </div>
-          {% endif %}
+        {% if user == task.user or user.is_superuser %}
+        <div class="col-sm-2">
+          <a href="{% url 'task:edittask' task.pk %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'task:deletetask' task.pk %}" class="btn btn-danger"
+             onclick="return confirm('Are you sure you want to Delete?');">Delete</a>
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>
