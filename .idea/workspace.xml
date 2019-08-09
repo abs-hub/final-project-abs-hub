@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27586258-9dee-4719-b4c0-10af9e7ab18e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/templates/registration/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/registration/password_reset_done.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,14 +86,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="30">
-                <caret line="2" column="102" selection-start-line="2" selection-start-column="102" selection-end-line="2" selection-end-column="102" />
+              <first_editor relative-caret-position="198">
+                <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/task/templates/registration/password_reset_done.html">
+          <provider editor-type-id="listudio_html_editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -121,6 +131,7 @@
       <find>ez2do</find>
       <find>created</find>
       <find>create_tas</find>
+      <find>search..</find>
     </findStrings>
     <replaceStrings>
       <replace>Ez2Do</replace>
@@ -141,12 +152,12 @@
         <option value="$PROJECT_DIR$/task/templates/management/change_password.html" />
         <option value="$PROJECT_DIR$/task/templates/registration/password_reset_complete.html" />
         <option value="$PROJECT_DIR$/task/templates/registration/password_reset_confirm.html" />
-        <option value="$PROJECT_DIR$/task/templates/registration/password_reset_done.html" />
         <option value="$PROJECT_DIR$/task/templates/registration/password_reset_email.html" />
         <option value="$PROJECT_DIR$/task/templates/management/acc_active_email.html" />
         <option value="$PROJECT_DIR$/task/templates/registration/password_reset_subject.txt" />
         <option value="$PROJECT_DIR$/task/views.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/task/templates/registration/password_reset_done.html" />
       </list>
     </option>
   </component>
@@ -228,7 +239,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565344771798" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565344851658" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -262,7 +273,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565337690561</updated>
-      <workItem from="1565337692914" duration="6482000" />
+      <workItem from="1565337692914" duration="6562000" />
     </task>
     <servers>
       <JIRA url="https://jira01.corp.linkedin.com:8443">
@@ -271,7 +282,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6482000" />
+    <option name="totallyTimeSpent" value="6562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -411,14 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/templates/registration/password_reset_done.html">
-      <provider editor-type-id="listudio_html_editor" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task/templates/registration/password_reset_confirm.html">
       <provider editor-type-id="listudio_html_editor" />
       <provider selected="true" editor-type-id="text-editor">
@@ -475,10 +478,18 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="30">
-            <caret line="2" column="102" selection-start-line="2" selection-start-column="102" selection-end-line="2" selection-end-column="102" />
+          <first_editor relative-caret-position="198">
+            <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/templates/registration/password_reset_done.html">
+      <provider editor-type-id="listudio_html_editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
         </state>
       </provider>
     </entry>
