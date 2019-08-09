@@ -1,0 +1,36 @@
+{% extends 'management/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+<!-- Title -->
+{% block title %} Task Details {% endblock %}
+
+<!-- JavaScript -->
+{% block headJS %}
+{% endblock %}
+
+{% block leftnav %}
+{% endblock %}
+
+{% block rightnav %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid h-100 text-dark">
+  <div class="row justify-content-center align-items-center">
+    <h1>Edit Task</h1>
+  </div>
+  <hr/>
+  <div class="row justify-content-center align-items-center h-100">
+    <form method="POST" action="{% url 'task:edittask' task_id %}">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+
+      {% buttons %}
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="{% url 'task:task_detail' task_id%}" class="btn btn-secondary">Cancel</a>
+      {% endbuttons %}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

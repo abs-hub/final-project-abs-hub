@@ -1,0 +1,44 @@
+{% extends 'management/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+<!-- Title -->
+{% block title %} Register {% endblock %}
+
+<!-- JavaScript -->
+{% block headJS %}
+
+{% endblock %}
+
+{% block leftnav %}{% endblock %}
+
+{% block rightnav %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid h-100 text-dark">
+  <div class="row justify-content-center align-items-center">
+    <h1>Register</h1>
+  </div>
+  <hr/>
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col col-sm-6 col-md-6 col-lg-6 col-xl-6">
+      <form method="POST" action="{% url 'task:register' %}">
+        <div class="form-group">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+
+          <br>
+          <script src='https://www.google.com/recaptcha/api.js'></script>
+          <div class="g-recaptcha" data-sitekey="6LfevbEUAAAAAP-gHqF2i_QVtSbiZsqf9xdAICme"></div>
+          <br>
+
+          {% buttons %}
+          <button type="submit" class="btn btn-primary">Sign up</button>
+          {% endbuttons %}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

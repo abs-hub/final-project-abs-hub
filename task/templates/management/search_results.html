@@ -1,0 +1,27 @@
+{% extends 'management/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load render_table from django_tables2 %}
+<!-- Title -->
+{% block title %} Search Results {% endblock %}
+
+<!-- JavaScript -->
+{% block headJS %}
+{% endblock %}
+
+{% block leftnav %}
+{% endblock %}
+
+{% block rightnav %}
+{% endblock %}
+
+{% block content %}
+<div class="form-group text-left">
+  <h2 class="text-left">Search results for:
+    {{ search }}</h2>
+</div>
+<!-- render table using django_tables2 -->
+{% render_table tasks %}
+
+{% endblock %}
+

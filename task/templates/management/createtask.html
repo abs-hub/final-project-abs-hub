@@ -1,0 +1,24 @@
+{% load bootstrap4 %}
+{{ form.errors }}
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">ADD TASK</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form method="POST" action="{% url 'task:createtask' %}">
+        {% csrf_token %}
+        <table>
+          {% bootstrap_form form %}
+        </table>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Create</button>
+      </form>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,6 @@
+Django>=2.2.3
+django-heroku
+psycopg2
+requests
+django_tables2
+bootstrap4

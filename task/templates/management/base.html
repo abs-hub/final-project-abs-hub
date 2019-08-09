@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    {% block title %}{% endblock %}
+  </title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <!-- to avoid google translate popup -->
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block headJS %}{% endblock %}
+
+<body>
+<div class="text-center p-3 d-none d-lg-block">
+  <div class="container"><h2>Task Management System</h2></div>
+</div>
+<nav class="navbar navbar-expand-md navbar-light">
+  <a class="navbar-brand" href="{% url 'task:home' %}"><b>Ez2Do</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      {% if user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'task:dashboard' %}"><i class="fa fa-check"></i>My Tasks <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'task:taskactivity' %}"><i class="fa fa-bar-chart"></i> Task Activity <span class="sr-only">(current)</span></a>
+      </li>
+      {% endif %}
+    </ul>
+    <ul class="navbar-nav mx-auto">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <form class="input-group" action="{% url 'task:search' %}" method="get">
+          <input type="text" class="form-control" name="srcStr" placeholder="Search...">
+          <span class="input-group-append">
+          <button class="btn btn-secondary" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+        </form>
+      </li>
+      {% endif %}
+      {% block leftnav %} {% endblock %}
+    </ul>
+    <ul class="nav navbar-nav navbar-right ml-auto">
+      {% if not user.is_authenticated %}
+      <li class="nav-item">
+        <!-- Register -->
+        <a class="nav-link" href="{% url 'task:register' %}">
+          <span class="fa fa-user"></span></span>
+          Sign Up</a>
+      </li>
+      <!-- Login -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'task:login' %}">
+          <span class="fa fa-sign-in"></span>
+          Login</a>
+      </li>
+      {% elif user.is_authenticated %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle"></i> {{ user.username }}</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'task:change_password' %}"><i class="fa fa-exchange"></i> Change
+            Password</a>
+          <a class="dropdown-item" href="{% url 'task:logout' %}"><i class="fa fa-sign-out"></i> Logout</a>
+      </li>
+      {% endif %}
+      {% block rightnav %} {% endblock %}
+    </ul>
+  </div>
+  <!--/#navbarCollapse -->
+</nav>
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+<main class="container-fluid p-5">
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <div class="jumbotron-content">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+</main>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrit`y="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+{% block footJS %}{% endblock %}
+</body>
+</html>

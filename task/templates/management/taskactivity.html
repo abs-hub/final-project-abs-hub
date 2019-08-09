@@ -1,0 +1,32 @@
+{% extends 'management/base.html' %}
+{% load static %}
+<!-- Title -->
+{% block title %} Task Activity {% endblock %}
+
+<!-- JavaScript -->
+{% block headJS %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="{% static 'js/chart.js' %}"></script>
+{% endblock %}
+
+{% block leftnav %}
+{% endblock %}
+
+{% block rightnav %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid h-100 text-dark">
+  <div class="row justify-content-center align-items-center">
+    <h1>Task Activity</h1>
+  </div>
+  <hr/>
+  <div class="row h-100">
+    <div class="col col-sm-6 col-md-6 col-lg-6 col-xl-6">
+      <canvas id="myChart" width="400" height="300"></canvas>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

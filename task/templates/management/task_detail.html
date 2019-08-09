@@ -1,0 +1,119 @@
+{% extends 'management/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+<!-- Title -->
+{% block title %} Task Details {% endblock %}
+
+<!-- JavaScript -->
+{% block headJS %}
+{% endblock %}
+
+{% block leftnav %}
+{% endblock %}
+
+{% block rightnav %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid h-100 text-dark">
+  <div class="row">
+    <h1>Task Details</h1>
+  </div>
+  <hr/>
+  <div class="row">
+
+    <div class="col">
+      <div class="form-group row">
+        <label for="staticTitle" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+          <span id="staticTitle">{{ task.title }}</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="staticUser" class="col-sm-2 col-form-label">User</label>
+        <div class="col-sm-10">
+          <span id="staticUser">{{ task.user }}</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="staticStatus" class="col-sm-2 col-form-label">Status</label>
+        <div class="col-sm-10">
+          <span id="staticStatus">{{ task.status }}</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="staticPriority" class="col-sm-2 col-form-label">Priority</label>
+        <div class="col-sm-10">
+          <span id="staticPriority">{{ task.priority }}</span>
+        </div>
+      </div>
+      <div class="form-group row">
+
+        <label for="staticDeadline" class="col-sm-2 col-form-label">Deadline</label>
+        <div class="col-sm-10">
+          <span id="staticDeadline">{{ task.deadline }}</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="staticResolution" class="col-sm-2 col-form-label">Resolution</label>
+        <div class="col-sm-10">
+          <span id="staticResolution">{{ task.resolution }}</span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="staticDescription" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <span id="staticDescription">{{ task.description }}</span>
+        </div>
+      </div>
+      <div class="form-group row">
+          {% if user == task.user or user.is_superuser %}
+          <div class="col-sm-2">
+            <a href="{% url 'task:edittask' task.pk %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'task:deletetask' task.pk %}" class="btn btn-danger"
+               onclick="return confirm('Are you sure you want to Delete?');">Delete</a>
+          </div>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h3>Leave a comment:</h3>
+  <div class="row justify-content-center align-items-center">
+    <div class="col">
+      <form action="{% url 'task:add_comment_to_task' task.pk %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {% buttons %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
+      </form>
+    </div>
+  </div>
+  <h3>Comments:</h3>
+  {% for comment in comments %}
+  <div class="row">
+    <div class="col">
+      <p>
+        On {{comment.created_date }}&nbsp;
+        <b>{{ comment.author }}</b> wrote:
+        {% if user == comment.author or user.is_superuser %}
+        <a href="{% url 'task:deletecomment' comment.pk %}" class="text-danger del-message" title="Delete">
+          <i class="fa fa-trash" aria-hidden="true"></i></a>
+        {% endif %}
+      </p>
+      <p>{{ comment.comment_description }}</p>
+    </div>
+  </div>
+  <hr>
+  {% empty %}
+  <div class="row">
+    <div class="col">
+      <p>No comments here yet :(</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

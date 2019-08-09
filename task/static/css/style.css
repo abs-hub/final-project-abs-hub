@@ -1,0 +1,10 @@
+body {
+  background-repeat: no-repeat;
+  background-color: #e6e6e6;
+  font-family: "Open Sans script=all rev=1";
+}
+
+.navbar .navbar-brand b {
+  font-weight: bold;
+  color: #e53935;
+}
