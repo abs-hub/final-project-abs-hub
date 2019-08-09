@@ -1,7 +1,6 @@
 # Final Project: Ez2Do (Task Management System)
 
-This project utilized python's Django framework, JavaScript, AJAX and SQL in form of Django's orm.
-This app is used to manage user tasks. 
+This project utilized python's Django framework, JavaScript, AJAX and SQL in the form of Django's orm.
 
 # Requirements
 https://cs50.harvard.edu/web/2019/summer/projects/final/#requirements
@@ -17,6 +16,7 @@ Below are the features this app is loaded with:
 * User can create task, edit his own task, add comments on any task, closed his own task, assign task to other user.
 * User can view his own task metrics - Task count by status.
 * User can search for any task by title, description and status.
+* Super user can delete, edit any task. They can also delete any comment.
 
 ### Prerequisites
 
@@ -33,7 +33,7 @@ python3 manage.py runserver
 * Custom User authentication and reCaptcha while signing up to avoid spam registrations.
 * Add a new task.
 * Edit user's own task. Super user can edit any task.
-* View loggedin users open and closed task.
+* View logged-in users open and closed task.
 * User can close his own task and has to provide a resolution.
 * Search for task by title, text and status. Sort search results.
 * Comment on tasks, email notification is sent if user forgets and requests for a password change from the UI.
@@ -46,8 +46,9 @@ python3 manage.py runserver
 * [iTerm2](https://www.iterm2.com/) - Terminal.
 * [Bootstrap v4.3.1](https://getbootstrap.com/) - Used this primarily for styling.
 * [font-awesome v4.7](https://fontawesome.com/v4.7.0/) - Used to show icons.
+* [Chart.js v2.7.3](https://www.chartjs.org/docs/latest/getting-started/) - Used for creating reports.
 * Python v3.7.3
-* Django
+* Django v2.2.3
 * AJAX and JavaScript
 * Django ORM for SQL
 * SQLite3
