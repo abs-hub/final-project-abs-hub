@@ -90,7 +90,12 @@ python3 manage.py runserver
     ```
 4. static/img/favicon.ico- required favicon.ico for the website.
 5. admin.py -- add models from ~/task/models.py to admin.py in order to track models using the built-in Django admin GUI.
-6. urls.py - Used to define app routes like we do in flask, but this is all at one place.
+6. urls.py - task.urls.py has all app routes to manage tasks. These routes are added to task_management.urls.py. Also Django standard account app routes are added. 
+    ```
+    path('admin/', admin.site.urls),
+    path("", include("task.urls")),
+    path('accounts/', include('django.contrib.auth.urls')),
+    ```
 7. task/templates/management
     * base.html - it is re-usable template used in different pages.
     * home.html - home page of the application, user can login or register from this page.
