@@ -112,7 +112,7 @@ python3 manage.py runserver
     * style.css - basic styling for the application, most of the styling is done by bootstrap framework
     * chart.js - JavaScript file which is responsible to render report.
     * main.js - JavaScript code which pulls content from createtask.html.
-9. Miscellaneous pages used handling password changes - 
+9. Miscellaneous pages used for handling password changes - 
      - password_reset_complete.html 
      - password_reset_confirm.html 
      - password_reset_done.html 
